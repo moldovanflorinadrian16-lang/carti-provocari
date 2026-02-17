@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, #1f1c2c, #928dab);
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,50 +11,48 @@ body {
 
 .app {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     padding: 20px;
     text-align: center;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 22px;
+    opacity: 0.8;
     margin-bottom: 30px;
 }
 
 .card {
-    background: white;
-    color: black;
-    padding: 40px 20px;
-    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 50px 25px;
     font-size: 22px;
-    margin-bottom: 30px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
-    animation: pop 0.4s ease;
-}
-
-.buttons button {
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    margin: 5px;
-    font-size: 14px;
-    background: #ff4757;
-    color: white;
+    margin-bottom: 35px;
+    box-shadow: 0 0 40px rgba(255, 0, 150, 0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: fadeIn 0.5s ease;
 }
 
 .draw-btn {
     width: 100%;
     padding: 18px;
-    font-size: 18px;
-    border-radius: 15px;
+    font-size: 17px;
+    border-radius: 20px;
     border: none;
-    background: #2ed573;
+    background: linear-gradient(90deg, #ff0080, #ff8c00);
     color: white;
-    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
 }
 
-@keyframes pop {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+.draw-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 0, 150, 0.5);
 }
-icon.png
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
