@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provocări</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#1f1c2c">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon.png') }}">
+</head>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/static/sw.js');
+}
+</script>
+<body>
+
+
+<div class="app">
+
+    <h1>🎴 Provocare 🎴</h1>
+
+    <div class="card">
+        {{ provocare }}
+    </div>
+
+    <div class="buttons">
+        <a href="/?mod=normal"><button>Normal</button></a>
+        <a href="/?mod=18"><button>18+</button></a>
+    </div>
+
+    <form method="get">
+        <input type="hidden" name="mod" value="{{ mod }}">
+        <button class="draw-btn" type="submit">TRAGE CARTE</button>
+    </form>
+
+</div>
+
+</body>
+</html>
